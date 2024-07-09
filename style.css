@@ -1,0 +1,276 @@
+
+/* Estilos generales */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+:root {
+    --fontColor: #f8fbff;
+    --mainColor: #3485b5;
+    --boxesColor: #fff;
+} 
+
+/* Navegador */
+
+header nav {
+    background-color: var(--mainColor);
+    padding: 1.2em 2em;
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    width: 100%;
+}
+
+.navegation {
+    margin: auto 0;
+}
+
+.navegation_items {
+    display: inline-block;
+    font-size: 1.1em;
+    margin: 0 1em;
+}
+
+.navegation_items a {
+    transition: background .3s;
+    background-color: #1d587a;
+    padding: .5em 1em;
+    border-radius: 2em;
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+.navegation_items a i {
+    margin-right: .5em;
+}
+
+.navegation_items a:hover {
+    background-color: #11415c;
+}
+
+/* Contenido principal */
+
+main {
+    justify-content: space-around;
+    min-height: calc(100vh - 200px);
+    position: relative;
+    padding: 2em 1em;
+    display: flex;
+    width: 100%;
+}
+
+.text_Input {
+    position: relative;
+    margin: 0 1em;
+    width: 65%;
+}
+
+.text_Input p {
+    align-items: center;
+    display: flex;
+    padding: .5em;
+    margin: .8em 0;
+    height: 2em;
+    width: 100%;
+}
+
+.text_Input img {
+    margin: 0 .6em;
+}
+
+#userInput {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--boxesColor);
+    border-radius: 1em;
+    height: 25em;
+    border: none;
+    resize: none;
+    width: 100%;
+}
+
+#userInput, .result_Box {
+    box-shadow: 0px 0px 12px #ccc;
+    padding: 2em 1em;
+    font-size: 1.3em;
+}
+
+/* Nota: Agregar OVERFLOW */
+
+.result_Box {
+    background-color: var(--boxesColor);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    width: 400px;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+    position: relative;
+}
+
+.result_Box p {
+    max-height: 90%;
+    overflow-y: auto;
+}
+
+.copyContainer {
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: 2em;
+    left: 0;
+}
+
+#CopyText {
+    transition: background .3s, transform .1s;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 0px 12px #aaa;
+    border-radius: 2em;
+    color: #fff;
+    background: #3485b5;
+    border: none;
+    padding: 1em;
+    width: 80%;
+}
+
+#CopyText:hover{
+    background: #e0e0e0;
+    cursor: pointer;
+}
+
+#CopyText:active {
+    transform: scale(.9);
+}
+
+
+.messageBox_container {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    height: 100%;
+    
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.messageBox {
+    transition: opacity .2s;
+    background: var(--mainColor);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    height: 250px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1em;
+    padding: 1.5em 2em;
+}
+
+.messageBox i {
+    border: 3px solid #fff;
+    border-radius: 50%;
+    padding: .4em .5em;
+    font-size: 3em;
+}
+.messageBox p {
+    font-size: 1.1em;
+}
+
+.btnContainer {
+    justify-content: center;
+    display: flex;
+}
+
+#encryptButton, 
+#decryptButton {
+    font-family: sans-serif;
+    box-shadow: 0px 0px 12px #837c7c;
+    transition: background .3s, transform .1s;
+    border-radius: 2em;
+    background: #3485b5;
+    color:#fff;
+    padding: 1em 5em;
+    cursor: pointer;
+    margin: 0 2em;
+    border: none;
+}
+
+#encryptButton:hover, 
+#decryptButton:hover {
+    background: #e0e0e0;
+}
+
+#encryptButton:active,
+#decryptButton:active {
+    transform: scale(.9);
+}
+
+/* Pie de página */
+
+footer {
+    background: var(--mainColor);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100px;
+    width: 100%;
+}
+
+.copyright_Footer {
+    color: var(--fontColor);
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media screen and (max-width: 892px) {
+    main {
+        flex-direction: column;
+    }
+
+    .text_Input,
+    .result_Box {
+        width: 100%;
+        margin: 0;
+    }
+
+    #encryptButton, 
+    #decryptButton {
+        margin: 1em .5em;
+    }
+
+    .btnContainer {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .result_Box {
+        margin-top: 50px;
+        min-height: 250px;
+    }
+
+    .copyContainer {
+        bottom: 1em;
+    }
+
+    .result_Box p {
+        margin-bottom: 1.5em;
+        max-height: 300px;
+    }
+
+}
